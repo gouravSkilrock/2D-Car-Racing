@@ -108,6 +108,7 @@
         gameArea.innerHTML = "";
         startScreen.classList.add('hide');
         score.innerHTML = "Score: " + 0;
+        
         player.start = true;
         player.score=0;
         window.requestAnimationFrame(gameplay);
@@ -210,6 +211,7 @@
 
     function endGame(){
         player.start=false;
+        player.speed=5;
         startScreen.classList.remove('hide');
         startScreen.innerHTML = "Game Over!!!<br/> Click to Restart the game <br/> Your Score:"+(player.score+1)
         
