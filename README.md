@@ -8,3 +8,4 @@ How start the game:
  
  Then Open the browser and type : http://localhost:1010/
 
+Game screenshot is Present at /public/Game-Screenshot.png
