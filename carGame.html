@@ -70,7 +70,6 @@
 </head>
 
 <body>
-
     <div class="cargame">
         <div class="score hide"></div>
         <div class="startScreen">
@@ -82,7 +81,7 @@
 
 </body>
 <script type="text/javascript">
-
+    var gameAudio = new Audio('/game-sound.mp3');
     let score = document.querySelector(".score");
     let startScreen = document.querySelector(".startScreen");
     let gameArea = document.querySelector(".gameArea");
@@ -101,13 +100,16 @@
     document.addEventListener('keydown', keyDown);
     document.addEventListener('keyup', keyUp);
 
-
+    function playsound(){
+        gameAudio.play();
+    }
     function startPlay() {
         //gameArea.classList.remove('hide');
         score.classList.remove('hide');
         gameArea.innerHTML = "";
         startScreen.classList.add('hide');
         score.innerHTML = "Score: " + 0;
+        playsound();
         
         player.start = true;
         player.score=0;
@@ -212,6 +214,7 @@
     function endGame(){
         player.start=false;
         player.speed=5;
+        gameAudio.pause();
         startScreen.classList.remove('hide');
         startScreen.innerHTML = "Game Over!!!<br/> Click to Restart the game <br/> Your Score:"+(player.score+1)
         
